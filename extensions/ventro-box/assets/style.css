@@ -1,0 +1,100 @@
+.ventro-box-block-container {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.ventro-box-form {
+  max-width: 90%;
+  margin-top: 1rem;
+  padding: 20px;
+  border: 1px solid #878686;
+  border-radius: 8px;
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.ventro-box-form-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.ventro-box-input-field {
+  width: 100%;
+  padding: 10px 10px 1px 10px;
+  border: 1px solid #878686;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #0e0e0e;
+  color: white;
+  height: 60px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.ventro-box-input-field:focus,
+.ventro-box-input-field:hover {
+  border: 2px solid #bababa;
+}
+
+.ventro-box-label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  font-size: 1.3rem;
+  color: #aaa;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.1s ease-in-out;
+}
+
+.ventro-box-input-field:focus + .ventro-box-label,
+.ventro-box-input-field:not(:placeholder-shown) + .ventro-box-label {
+  top: 20%;
+  left: 2%;
+  font-size: 1rem;
+}
+
+.hide-icon {
+  position: absolute;
+  top: 58%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #878686;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.hide-icon:hover {
+  color: #fff;
+}
+
+.ventro-box-form button {
+  display: inline-block;
+  background-color: #2ba744;
+  height: 50px;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ventro-box-form button:hover {
+  transform: scale(1.02);
+}
+.hide-icon svg {
+  height: 24px !important;
+  width: 24px !important;
+  stroke: white !important;
+}

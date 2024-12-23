@@ -1,0 +1,271 @@
+{{ 'style.css' | asset_url | stylesheet_tag }}
+
+{% assign show_app_block = false %}
+
+{% for order in customer.orders %}
+  {% for item in order.line_items %}
+    {% if item.product.tags contains 'nfc' %}
+      {% assign show_app_block = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if show_app_block %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if show_app_block %}
+  <div class="ventro-box-block-container">
+    <h1 class="ventro-box-form-title">Ventro Box Form</h1>
+    <form method="post" action="" class="ventro-box-form">
+      <!-- Name Field -->
+      <div class="ventro-box-form-section">
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="name"
+            name="name"
+            class="ventro-box-input-field"
+            placeholder=" "
+            required
+          >
+          <label for="name" class="ventro-box-label">Name</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('name', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('name', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Job Title Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="job_title"
+            name="job_title"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="job_title" class="ventro-box-label">Job Title</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('job_title', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('job_title', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Company Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="company"
+            name="company"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="company" class="ventro-box-label">Company</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('company', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('company', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="email"
+            name="email"
+            class="ventro-box-input-field"
+            placeholder=" "
+            required
+          >
+          <label for="email" class="ventro-box-label">Email</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('email', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('email', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Secondary Email Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="secondary_email"
+            name="secondary_email"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="secondary_email" class="ventro-box-label">Secondary Email</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('secondary_email', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('secondary_email', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Phone Number Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="phone"
+            name="phone"
+            class="ventro-box-input-field"
+            placeholder=" "
+            required
+          >
+          <label for="phone" class="ventro-box-label">Phone Number</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('phone', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('phone', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Secondary Phone Number Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="secondary_phone"
+            name="secondary_phone"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="secondary_phone" class="ventro-box-label">Secondary Phone</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('secondary_phone', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('secondary_phone', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- Website Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="website"
+            name="website"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="website" class="ventro-box-label">Website</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('website', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('website', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <!-- LinkedIn Field -->
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="linkedin"
+            name="linkedin"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="linkedin" class="ventro-box-label">LinkedIn Profile</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('linkedin', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('linkedin', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="facebook"
+            name="facebook"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="facebook" class="ventro-box-label">Facebook</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('facebook', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('facebook', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="instagram"
+            name="instagram"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="instagram" class="ventro-box-label">Instagram</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('instagram', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('instagram', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+
+        <div class="form-input-group">
+          <input
+            type="password"
+            id="tiktok"
+            name="tiktok"
+            class="ventro-box-input-field"
+            placeholder=" "
+          >
+          <label for="tiktok" class="ventro-box-label">TikTok</label>
+          <span class="hide-icon open-eye" style="display: inline;" onclick="toggleVisibility('tiktok', this)">
+            {% render 'openEye' %}
+          </span>
+          <span class="hide-icon close-eye" style="display: none;" onclick="toggleVisibility('tiktok', this)">
+            {% render 'closeEye' %}
+          </span>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+{% endif %}
+
+<script>
+  function toggleVisibility(fieldId, clickedIcon) {
+    const input = document.getElementById(fieldId);
+    const parent = clickedIcon.closest('.form-input-group');
+    const openEye = parent.querySelector('.open-eye');
+    const closeEye = parent.querySelector('.close-eye');
+
+    if (input.type === 'password') {
+      input.type = 'text';
+      openEye.style.display = 'none';
+      closeEye.style.display = 'inline';
+    } else {
+      input.type = 'password';
+      openEye.style.display = 'inline';
+      closeEye.style.display = 'none';
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Star Rating",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+  ]
+}
+{% endschema %}

@@ -16,14 +16,11 @@ export function Dashboard() {
         <>
           {isError ? (
             <Banner title="Error">
-              <p>
-                An error occurred while processing this Page. Please try again
-                later.
-              </p>
+              <p>An error occurred while processing this Page. Please try again later.</p>
             </Banner>
           ) : (
             <>
-              <div>Hello from app</div>
+              <div>Show ALl customer </div>
             </>
           )}
         </>
