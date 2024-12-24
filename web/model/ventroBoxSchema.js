@@ -14,7 +14,6 @@ const ventroBoxSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    lowercase: true,
     validate: {
       validator: function (v) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
@@ -25,7 +24,6 @@ const ventroBoxSchema = new mongoose.Schema({
   secondaryEmail: {
     type: String,
     trim: true,
-    lowercase: true,
     validate: {
       validator: function (v) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
@@ -35,7 +33,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   phoneNumber: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^[0-9]{10,15}$/.test(v);
@@ -45,7 +42,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   secondaryPhoneNumber: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^[0-9]{10,15}$/.test(v);
@@ -55,7 +51,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   website: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w.-]*)*\/?$/.test(v);
@@ -65,7 +60,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   linkedInProfile: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^(https?:\/\/)?(www\.)?linkedin\.com\/.*$/.test(v);
@@ -75,7 +69,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   facebook: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^(https?:\/\/)?(www\.)?facebook\.com\/.*$/.test(v);
@@ -85,7 +78,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   instagram: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^(https?:\/\/)?(www\.)?instagram\.com\/.*$/.test(v);
@@ -95,7 +87,6 @@ const ventroBoxSchema = new mongoose.Schema({
   },
   tiktok: {
     type: String,
-    trim: true,
     validate: {
       validator: function (v) {
         return /^(https?:\/\/)?(www\.)?tiktok\.com\/.*$/.test(v);
@@ -107,4 +98,4 @@ const ventroBoxSchema = new mongoose.Schema({
 
 const VentroBox = mongoose.model("VentroBox", ventroBoxSchema);
 
-export default VentroBox; // Export the model directly
+export default VentroBox; 
